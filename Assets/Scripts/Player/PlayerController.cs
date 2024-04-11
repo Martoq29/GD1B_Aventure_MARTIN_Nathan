@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float walkSpeed;
     Rigidbody2D rb;
 
-    float walkSpeed = 7f;
+
     float SpeedLimiter = 0.7f;
     float inputHorizontal;
     float inputVertical;
