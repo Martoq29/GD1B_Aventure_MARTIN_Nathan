@@ -1,26 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AIChaise : MonoBehaviour
+public class AIChase : MonoBehaviour
 {
     public GameObject player;
     public float speed;
+    public Animator animator;
 
-    private float distance;
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
-    }
+        Vector3 direction = player.transform.position - transform.position;
+        float distance = direction.magnitude;
 
-    // Update is called once per frame
-    void Update()
-    {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
+        if (distance < 4f)
+        {
+            transform.position += direction.normalized * speed * Time.deltaTime;
 
-
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            // Determine if the player is to the left or right of the enemy
+            if (direction.x < 0)
+            {
+                // Play animation for moving left
+                animator.SetBool("MovingLeft", true);
+                animator.SetBool("MovingRight", false);
+            }
+            else
+            {
+                // Play animation for moving right
+                animator.SetBool("MovingRight", true);
+                animator.SetBool("MovingLeft", false);
+            }
+        }
+        else
+        {
+            // Stop both animations when the enemy is not moving
+            animator.SetBool("MovingLeft", false);
+            animator.SetBool("MovingRight", false);
+        }
     }
 }

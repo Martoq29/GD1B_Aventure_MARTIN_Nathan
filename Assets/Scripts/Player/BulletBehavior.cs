@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletBehavior : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float normalBulletSpeed = 15f;
     [SerializeField] private float destroyTime = 3f;
-    [SerializeField] private LayerMask whatDestroyBullet;
+    [SerializeField] private float normalBulletSpeed = 10f; // Ajout de la vitesse de la balle
     [SerializeField] private float normalBulletDamage = 1f;
 
     private Rigidbody2D rb;
@@ -25,7 +22,8 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((whatDestroyBullet.value & (1 << collision.gameObject.layer)) > 0)
+        // Vérifie si la collision se produit avec un objet portant le tag "Enemy"
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             Damageable damageable = collision.GetComponent<Damageable>();
             if (damageable != null)

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 23eac4be8d67c6f47b1e9ed068c7e739
+guid: 557bb01f07888af46a5d9439a905a9b3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Golem_0
+      name: Golem_idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,8 +111,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d92be43387919c94c9259d8fe281309f
-      internalID: 395488627
+      spriteID: cd9c1eb9df936a84baff4ec8794193f6
+      internalID: -1080395095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_idle_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd082db5babd5da4ea6d7bed4e29ea56
+      internalID: 1808443098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_idle_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82625296484b5824e94be5dfe6f14a0c
+      internalID: -1736886796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Golem_idle_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40c48cc1420ace46893163e6e64793b
+      internalID: 155614416
       vertices: []
       indices: 
       edges: []
@@ -128,7 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Golem_0: 395488627
+      Golem_idle_0: -1080395095
+      Golem_idle_1: 1808443098
+      Golem_idle_2: -1736886796
+      Golem_idle_3: 155614416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

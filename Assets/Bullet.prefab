@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalBulletSpeed: 15
-  destroyTime: 3
+  destroyTime: 2
   whatDestroyBullet:
     serializedVersion: 2
     m_Bits: 128

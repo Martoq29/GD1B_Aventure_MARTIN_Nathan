@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour, Damageable
 {
     [SerializeField] public float maxHealth = 5f;
 
+    private Transform target;
+
     private float currentHealth;
 
     private void Start()
@@ -23,5 +25,6 @@ public class Enemy : MonoBehaviour, Damageable
         }
 
     }
+
 
 }

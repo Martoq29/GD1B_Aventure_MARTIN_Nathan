@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float walkSpeed;
     Rigidbody2D rb;
+    protected Vector2 direction;
 
 
     float SpeedLimiter = 0.7f;
