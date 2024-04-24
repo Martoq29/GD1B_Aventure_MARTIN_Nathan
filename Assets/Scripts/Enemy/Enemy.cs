@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour, Damageable
     private Transform target;
 
     private float currentHealth;
+    [Header("Loot")]
+    public List<Loot> lootTable = new List<Loot>();
 
     private void Start()
     {
@@ -24,7 +26,15 @@ public class Enemy : MonoBehaviour, Damageable
             Destroy(gameObject);
         }
 
+        
+
     }
 
+    void InstantiateLoot(GameObject loot)
+    {
+        GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+
+        droppedLoot.GetComponent<SpriteRenderer>().color = Color.red;
+    }
 
 }
