@@ -11,4 +11,5 @@ public class PowerUp : MonoBehaviour
         Destroy(gameObject);
         powerupEffect.Apply(collision.gameObject);
     }
+
 }
