@@ -11,7 +11,7 @@ public class AIChase : MonoBehaviour
         Vector3 direction = player.transform.position - transform.position;
         float distance = direction.magnitude;
 
-        if (distance < 4f)
+        if (distance < 10f)
         {
             transform.position += direction.normalized * speed * Time.deltaTime;
 

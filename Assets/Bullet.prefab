@@ -145,11 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309be4eaff53edf408500ae75a38cd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyTime: 1
   normalBulletSpeed: 15
-  destroyTime: 2
-  whatDestroyBullet:
-    serializedVersion: 2
-    m_Bits: 128
   normalBulletDamage: 2
 --- !u!50 &-3853608881353611839
 Rigidbody2D:

@@ -8,11 +8,9 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     protected Vector2 direction;
 
-
     float SpeedLimiter = 0.7f;
     float inputHorizontal;
     float inputVertical;
-
 
     Animator animator;
     string currentState;
@@ -22,16 +20,21 @@ public class PlayerController : MonoBehaviour
     const string PLAYER_WALK_UP = "Player_Walk_Up";
     const string PLAYER_WALK_DOWN = "Player_Walk_Down";
 
+    public float maxHealth = 100f;
+    float currentHealth;
+
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
+        currentHealth = maxHealth; // Initialiser la santé actuelle à la santé maximale au début
     }
 
     void Update()
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
+        
     }
 
     void FixedUpdate()
@@ -44,7 +47,7 @@ public class PlayerController : MonoBehaviour
                 inputVertical *= SpeedLimiter;
             }
 
-                rb.velocity = new Vector2(inputHorizontal * walkSpeed, inputVertical * walkSpeed);
+            rb.velocity = new Vector2(inputHorizontal * walkSpeed, inputVertical * walkSpeed);
 
             if (inputHorizontal > 0)
             {
@@ -65,12 +68,11 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(0f, 0f);
+            rb.velocity = Vector2.zero;
             ChangeAnimationState(PLAYER_IDLE);
         }
-
-        
     }
+
     void ChangeAnimationState(string newState)
     {
         if (currentState == newState) return;
@@ -79,11 +81,40 @@ public class PlayerController : MonoBehaviour
 
         currentState = newState;
     }
-    
 
+    public float health = 100f;
 
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
 
+    void Die()
+    {
+        // Logique pour gérer la mort du joueur
+        Debug.Log("Player died!");
+        // D'autres actions comme le respawn du joueur peuvent être ajoutées ici
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Loot")) // Vérifie si l'objet en collision est du loot
+        {
+            CollectLoot(other.gameObject);
+        }
+    }
 
+    // Fonction pour collecter le loot
+    void CollectLoot(GameObject lootObject)
+    {
+        // Vous pouvez ajouter ici la logique pour traiter le loot collecté
+        Debug.Log("Loot collected!");
 
+        // Détruire le GameObject du loot
+        Destroy(lootObject);
+    }
 
 }

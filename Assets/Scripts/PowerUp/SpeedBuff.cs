@@ -9,6 +9,6 @@ public class SpeedBuff : PowerUpEffect
     public override void Apply(GameObject target)
     {
         target.GetComponent<PlayerController>().walkSpeed += amount;
-        target.GetComponent<SpriteRenderer>().color = Color.yellow;
+        target.GetComponent<SpriteRenderer>().color = Color.red;
     }
 }

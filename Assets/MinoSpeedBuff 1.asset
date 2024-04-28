@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4803d138eee2de24c8c41bc8d69cbfc0, type: 3}
-  m_Name: MinoSpeedBuff
+  m_Name: MinoSpeedBuff 1
   m_EditorClassIdentifier: 
-  amount: 2
+  amount: 5
